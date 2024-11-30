@@ -4,28 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypto Piggy Bank</title>
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
 </head>
 <body>
-  <h1>Crypto Piggy Bank</h1>
-  
-  <label for="lockupPeriod">Lock-up Period (seconds):</label>
-  <input type="number" id="lockupPeriod" value="604800"><br><br>
+  <div class="container">
+    <header>
+      <h1>Crypto Piggy Bank</h1>
+      <p>Deposit ETH, set a lock-up period, and withdraw after the specified time!</p>
+    </header>
+    
+    <section class="deposit-section">
+      <h2>Make a Deposit</h2>
+      <div class="input-group">
+        <label for="depositAmount">Amount to Deposit (ETH):</label>
+        <input type="number" id="depositAmount" placeholder="Amount in ETH" min="0.1" step="0.1">
+      </div>
+      <div class="input-group">
+        <label for="lockupPeriod">Lock-up Period (seconds):</label>
+        <input type="number" id="lockupPeriod" value="604800" min="3600">
+      </div>
+      <button onclick="depositFunds()">Deposit</button>
+    </section>
 
-  <button onclick="depositFunds()">Deposit</button><br><br>
+    <section class="balance-section">
+      <h2>Check Balance & Lockup</h2>
+      <button onclick="checkBalance()">Check Balance</button>
+      <p id="balance"></p>
+      <button onclick="checkLockupTime()">Check Lockup Period</button>
+      <p id="lockupTime"></p>
+    </section>
 
-  <button onclick="checkBalance()">Check Balance</button><br><br>
+    <section class="withdraw-section">
+      <h2>Withdraw Funds</h2>
+      <div class="input-group">
+        <label for="withdrawAmount">Amount to Withdraw (ETH):</label>
+        <input type="number" id="withdrawAmount" placeholder="Amount in ETH">
+      </div>
+      <button onclick="withdrawFunds()">Withdraw</button>
+    </section>
 
-  <button onclick="checkLockupTime()">Check Lockup Period</button><br><br>
-
-  <label for="withdrawAmount">Withdraw Amount (ETH):</label>
-  <input type="number" id="withdrawAmount" placeholder="Amount in ETH"><br><br>
-
-  <button onclick="withdrawFunds()">Withdraw</button><br><br>
-
-  <div id="balance"></div>
-  <div id="lockupTime"></div>
-
+    <footer>
+      <p>Grizzly Peak Software © 2024</p>
+    </footer>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
