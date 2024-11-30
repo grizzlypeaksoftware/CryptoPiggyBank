@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Piggy Bank</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+  <h1>Crypto Piggy Bank</h1>
+  
+  <label for="lockupPeriod">Lock-up Period (seconds):</label>
+  <input type="number" id="lockupPeriod" value="604800"><br><br>
+
+  <button onclick="depositFunds()">Deposit</button><br><br>
+
+  <button onclick="checkBalance()">Check Balance</button><br><br>
+
+  <button onclick="checkLockupTime()">Check Lockup Period</button><br><br>
+
+  <label for="withdrawAmount">Withdraw Amount (ETH):</label>
+  <input type="number" id="withdrawAmount" placeholder="Amount in ETH"><br><br>
+
+  <button onclick="withdrawFunds()">Withdraw</button><br><br>
+
+  <div id="balance"></div>
+  <div id="lockupTime"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
